@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
-import publicImage from "@/public/Public.gif";
+import publicImage from "@/public/public.gif";
 
 export default function Home() {
   return (
