@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Custom Authentication and Authorization Website
 
-## Getting Started
+Welcome to our website! This README file will guide you through the features and functionality of our custom authentication and authorization system.
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Our website provides a custom authentication and authorization system to manage user access to different pages. It consists of two main pages:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **Public Page:** Accessible to all users, located at the root path (`/`).
+2. **Private Page:** Accessible only to logged-in users, located at the `/private` path.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Additionally, we have dedicated pages for signing up and logging in:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Signup Page:** Allows users to create a new account, located at `/sign-up`.
+- **Login/Signin Page:** Enables existing users to log in to their accounts, located at `/sign-in`.
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+- **Custom Authentication:** We've implemented a custom authentication system to manage user logins securely.
+- **Authorization:** Users can only access the private page (`/private`) if they are authenticated.
+- **Error Handling:** If users provide invalid credentials during login, the server sends an error message to notify them.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Usage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. **Signup:** Visit the `/sign-up` page to create a new account. Provide necessary details such as username, email, and password.
+2. **Login:** After signing up, visit the `/sign-in` page to log in with your credentials. If you're an existing user, enter your email and password.
+3. **Access Private Page:** Once logged in, you can access the private page (`/private`) to view its content.
 
-## Deploy on Vercel
+## Technologies Used
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Frontend:** Next JS
+- **Backend:** Next JS server Action
+- **Database:** MongoDB
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Setup
+
+1. Clone the repository to your local machine.
+2. Install dependencies using [package manager]. For example, if using Node.js, run `npm install`.
+3. Configure the backend server to connect to your database.
+4. Run the server locally. Ensure that the necessary routes (public, private, signup, signin) are properly configured.
+5. Access the website through your browser.
+
+## Feedback
+
+If you have any feedback or suggestions, please feel free to [contact us](mailto:khandakerbayazidahmed@email.com). We'd love to hear from you!
+
+Thank you for using our custom authentication and authorization system. We hope you find it useful!
