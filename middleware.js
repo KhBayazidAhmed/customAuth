@@ -1,20 +1,19 @@
 import { NextResponse } from "next/server";
-import { verifyJWT } from "./utils";
+import { decrypt } from "./utils";
 
 export async function middleware(req) {
-  console.log("middleware running");
+  const url = req.nextUrl.clone();
   const token = req.cookies.get("token");
-  // if (!token) {
-  //   const url = req.nextUrl.clone();
-  //   url.pathname = "/access-decline";
-  //   return NextResponse.rewrite(url);
-  // }
-  // let decoded = await verifyJWT(token.value);
-  // console.log(decoded);
-  // const url = req.nextUrl.clone();
-  // url.pathname = "/private";
-  // return NextResponse.rewrite(url);
+  if (!token) {
+    url.pathname = "/access-decline";
+    return NextResponse.rewrite(url);
+  }
+  let decoded = await decrypt(token.value);
+  if (!decoded) {
+    url.pathname = "/access-decline";
+    return NextResponse.rewrite(url);
+  }
 }
 export const config = {
-  matcher: ["/private", "/sign-in", "/sign-up"],
+  matcher: ["/private"],
 };
