@@ -1,8 +1,5 @@
 import { navItems } from "@/constant";
-import { cookies } from "next/headers";
 import Link from "next/link";
-import React from "react";
-import LogoutButton from "./NavLogoutButtonArea";
 import NavLogoutButtonArea from "./NavLogoutButtonArea";
 
 const Navbar = () => {

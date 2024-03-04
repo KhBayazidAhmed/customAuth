@@ -1,10 +1,8 @@
 import { cookies } from "next/headers";
 import Link from "next/link";
 import LogoutButton from "./LogoutButton";
-import { redirect } from "next/navigation";
 export default function NavLogoutButtonArea() {
   const login = cookies().get("token");
-
   return (
     <li>
       {login ? (

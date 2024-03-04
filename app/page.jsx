@@ -5,6 +5,7 @@ import publicImage from "@/public/Public.gif";
 export default function Home() {
   return (
     <div className="h-screen">
+      <Navbar />
       <div className="flex justify-center -mt-16 h-full items-center ">
         <div className="text-center flex flex-col items-center">
           <Image src={publicImage} alt="Public Icon" />

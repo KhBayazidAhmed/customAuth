@@ -1,7 +1,7 @@
 "use server";
 import connectDB from "@/database/connectDb";
 import User from "@/database/models/userModels";
-import { generateJWTToken } from "@/utils";
+import { encrypt, generateJWTToken } from "@/utils";
 import bcrypt from "bcrypt";
 import { cookies } from "next/headers";
 
@@ -69,7 +69,7 @@ export async function signIn(formData) {
         }),
       };
     }
-    let token = await generateJWTToken(foundUser._id.toString());
+    let token = await encrypt({ user: foundUser._id.toString() });
     cookies().set("token", token, { secure: true });
     userOK = true;
     return {
